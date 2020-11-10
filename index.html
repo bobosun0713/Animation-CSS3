@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="Warp">
+        <ul class="BackAnimate">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div class="RedPage">
+            <div class="PageTop">
+                <span class="coin"></span>
+            </div>
+            <div class="PageContant">
+                <div class="PageContant__space">
+                    <p class="PageContant__space_tit">恭喜獲得</p>
+                    <p class="PageContant__space_dollar">100元</p>
+                    <p class="PageContant__space_caption">今日紅包總額10萬，會員發貨抽紅包</p>
+                    <div class="PageContant__space_link">
+                        <a href="#">說明詳情</a>
+                        <a href="#">關閉</a>
+                    </div>
+                </div>
+            </div>
+            <div class="PageIcon"></div>
+            <!-- <div class="PageCancel"></div> -->
+        </div>
+    </div>
+
+
+
+    <script>
+        function ShowRedPage() {
+            //開啟紅包
+            var Warp = document.querySelector(".Warp");
+            Warp.style.display = "block";
+
+            //紅包變數
+            var page = document.querySelector(".RedPage");
+            var pageTop = document.querySelector(".PageTop");
+            var BackAnimate = document.querySelector(".BackAnimate");
+            var pageContant = document.querySelector(".PageContant");
+            var PageCon_Space = document.querySelector(".PageContant__space");
+
+            //關閉變數
+            // var Cancel01 = document.querySelector(".PageCancel");
+            var Cancel02 = document.querySelectorAll(
+                ".PageContant__space_link > a"
+            )[1];
+
+            // 觸發震動
+            page.addEventListener("click", function () {
+                page.classList.add("PageAnimation");
+
+                // 打開信封袋
+                setTimeout(function () {
+                    pageTop.classList.add("rotate");
+                    page.classList.add("PageAnimation");
+                }, 500);
+
+                // 信封取出
+                setTimeout(function () {
+                    PageCon_Space.classList.add("PageCon_SpaceAnimation");
+                    pageContant.classList.add("PageContantAnimation");
+                }, 800);
+
+                // 錢幣背景動畫
+                setTimeout(function () {
+                    BackAnimate.classList.add("BackAnimate--active");
+                }, 1000);
+            });
+
+            //關閉事件
+            // Cancel01.addEventListener("click", function () {
+            //     Warp.style.display = "none";
+            // });
+            Cancel02.addEventListener("click", function () {
+                Warp.style.display = "none";
+            });
+        }
+
+        ShowRedPage();
+    </script>
+</body>
+
+</html>
