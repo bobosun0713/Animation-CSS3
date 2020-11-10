@@ -5,4 +5,4 @@
 2. IE不支援overfolw:hidden，已改善。
 
 單純紀錄使用CSS3 跟 JS做控制所製作出來的動畫。
-網址:
+- 網址: https://bobosun0713.github.io/Animation-CSS3/
