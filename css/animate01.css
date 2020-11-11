@@ -1,4 +1,27 @@
 @charset "UTF-8";
+.btn {
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  position: fixed;
+  z-index: 99;
+  text-align: center;
+}
+
+.btn > a {
+  width: 80px;
+  border-radius: 10px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px;
+  background-color: #1f64a5;
+  color: white;
+  font-weight: 900;
+  font-size: 1.125rem;
+  letter-spacing: 1px;
+  margin: 5px;
+}
+
 .Warp {
   box-sizing: border-box;
   margin: 0;
@@ -30,7 +53,7 @@
   width: 50px;
   height: 50px;
   border-radius: 100%;
-  background-image: url(./image/coinback.png);
+  background-image: url(../image/coinback.png);
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -246,7 +269,7 @@
   content: "";
   display: block;
   position: absolute;
-  background-image: url(./image/text.png);
+  background-image: url(../image/text.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -262,7 +285,7 @@
 .PageTop .coin {
   background-color: transparent;
   position: absolute;
-  background-image: url(./image/coin.png);
+  background-image: url(../image/coin.png);
   background-size: cover;
   background-repeat: no-repeat;
   left: 50%;
@@ -382,7 +405,7 @@
   width: 100%;
   height: 100%;
   position: relative;
-  background-image: url(./image/page.jpg);
+  background-image: url(../image/page.jpg);
   background-repeat: no-repeat;
   background-position: center;
   box-shadow: inset 0px 0px 13px 2px white;
@@ -392,7 +415,7 @@
   content: "";
   display: block;
   position: absolute;
-  background-image: url(./image/coinback01.png);
+  background-image: url(../image/coinback01.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -407,7 +430,7 @@
   content: "";
   display: block;
   position: absolute;
-  background-image: url(./image/coin02.png);
+  background-image: url(../image/coin02.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -585,4 +608,4 @@
     overflow: visible;
   }
 }
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=animate01.css.map */

@@ -2,19 +2,18 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./css/animate01.css">
+    <link rel="stylesheet" href="./css/animate02.css" />
 </head>
 
 <body>
-    <!-- 操控按鈕 -->
-    <div class="btn">
+     <!-- 操控按鈕 -->
+     <div class="btn">
         <a href="javaScript:;">重置</a>
         <a href="javaScript:;">切換樣式</a>
     </div>
-    
     <div class="Warp">
         <ul class="BackAnimate">
             <li></li>
@@ -46,7 +45,7 @@
                 <div class="PageContant__space">
                     <p class="PageContant__space_tit">恭喜獲得</p>
                     <p class="PageContant__space_dollar">100元</p>
-                    <p class="PageContant__space_caption">今日紅包總額10萬，會員發貨抽紅包</p>
+                    <p class="PageContant__space_caption">總紅包150000元，會員發貨抽紅包</p>
                     <div class="PageContant__space_link">
                         <a href="#">說明詳情</a>
                         <a href="#">關閉</a>
@@ -54,7 +53,6 @@
                 </div>
             </div>
             <div class="PageIcon"></div>
-            <!-- <div class="PageCancel"></div> -->
         </div>
     </div>
 
@@ -101,23 +99,22 @@
 
             //關閉事件
             // Cancel01.addEventListener("click", function () {
-            //     Warp.style.display = "none";
+            //   Warp.style.display = "none";
             // });
             Cancel02.addEventListener("click", function () {
                 Warp.style.display = "none";
             });
         }
-
-        function reStart(){
+        function reStart() {
             var Warp = document.querySelector(".Warp");
             var btn = document.querySelectorAll('.btn > a');
-            btn[0].addEventListener('click',function(){
+            btn[0].addEventListener('click', function () {
                 window.location.reload();
             })
-            btn[1].addEventListener('click',function(){
-               this.href="index02.html"
+            btn[1].addEventListener('click', function () {
+                this.href = "index.html"
             })
-          
+
         }
         reStart();
         ShowRedPage();
