@@ -16,29 +16,29 @@
         <a href="page01.html">樣式2</a>
         <a href="page02.html">樣式3</a>
     </div>
-    <div class="Wrap">
+    <div class="RedWrap">
         <div class="envelopes">
             <ul>
                 <li>
                     <div class="env_img">
-                        <img src="./image/RedSM02.svg" alt="" />
+                        <img src="./image/RedSM1.svg" alt="" />
                     </div>
-                    <button>按鈕1</button>
+                    <button>選我</button>
                 </li>
                 <li>
                     <div class="env_img">
-                        <img src="./image/RedSM02.svg" alt="" />
+                        <img src="./image/RedSM1.svg" alt="" />
                     </div>
-                    <button>按鈕2</button>
+                    <button>選我</button>
                 </li>
                 <li>
                     <div class="env_img">
-                        <img src="./image/RedSM02.svg" alt="" />
+                        <img src="./image/RedSM1.svg" alt="" />
                     </div>
-                    <button>按鈕3</button>
+                    <button>選我</button>
                 </li>
             </ul>
-            <div class="countDown">倒數秒後，自動選擇</div>
+            <div class="countDown">已關閉自動選擇</div>
         </div>
         <div class="envelopes_Open">
             <div class="envelopes_OpenTop"></div>
@@ -54,8 +54,8 @@
     </div>
 
     <script>
-        let count = 99;
-        let Wrap = document.querySelector(".Wrap");
+        let count = random(0, 100);
+        let Wrap = document.querySelector(".RedWrap");
 
         //三個紅包
         let TreePage = document.querySelector('.envelopes');
@@ -70,6 +70,19 @@
         let PageTop = document.querySelector('.envelopes_Open > .envelopes_OpenTop');
         let PageCon = document.querySelector('.envelopes_Open > .envelopes_contant');
 
+
+
+        Img.forEach(function (Imgs, index){
+            Imgs.addEventListener("click", function (e) {
+                if (LiImg[index].getElementsByTagName('span').length !== 0) return;
+                nowSec.style.opacity = 0;
+
+                giveAll(count, index);
+
+                redEnvelopes();
+
+            });
+        })
 
 
         btn.forEach(function (btns, index) {
@@ -94,15 +107,13 @@
                 Img[i].addEventListener('animationend', function () {
                     if (index === undefined) return;
                     LiImg[index].appendChild(total(num));
-                })
 
-                //亂數值
-                Img[i].addEventListener('animationend', function () {
                     //如果標籤內沒有span，新增一筆並用亂數給予
                     if (LiImg[i].getElementsByTagName('span').length === 0) {
                         LiImg[i].appendChild(total(random(4, 20) * 5))
                         // console.log('第一個:',random(4, 20)*5 , '第二個 :' , random(4, 20)*5 , '第三個 :',random(4, 20)*5)
                     }
+
                 })
             }
         }
@@ -129,7 +140,7 @@
 
         // 倒數計時，自動選擇
         function startTimeout(num) {
-            let sec = 5; // 調整秒數
+            let sec = 6; // 調整秒數
             function timeout() {
                 // 如果已選擇就跳出計時
                 for (let i = 0; i < LiImg.length; i++) {
@@ -221,15 +232,15 @@
             });
         }
         close()
-        //重整
-        function reStart() {
-            var Warp = document.querySelector(".Warp");
-            var btn = document.querySelectorAll('.btn > a');
-            btn[0].addEventListener('click', function () {
-                window.location.reload();
-            })
-        }
-        reStart();
+        // //重整
+        // function reStart() {
+        //     var Warp = document.querySelector(".Warp");
+        //     var btn = document.querySelectorAll('.btn > a');
+        //     btn[0].addEventListener('click', function () {
+        //         window.location.reload();
+        //     })
+        // }
+        // reStart();
 
     </script>
 </body>

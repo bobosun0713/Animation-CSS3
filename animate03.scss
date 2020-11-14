@@ -1,14 +1,14 @@
 // 按鈕控制
-.btn{
+.btn {
   top: 5%;
   left: 50%;
-  transform: translate(-50%,0);
+  transform: translate(-50%, 0);
   position: fixed;
   z-index: 99;
   text-align: center;
+  display: flex;
 
-
-  >a{
+  > a {
     width: 80px;
     border-radius: 10px;
     text-decoration: none;
@@ -23,18 +23,17 @@
   }
 }
 
-
-
-.Wrap * {
+.RedWrap * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   list-style: none;
   outline: none;
   font-family: "微軟正黑體";
+  -webkit-tap-highlight-color: transparent;
 }
 
-.Wrap {
+.RedWrap {
   position: fixed;
   background-color: rgba(0, 0, 0, 0.7);
   top: 0;
@@ -71,6 +70,7 @@
         position: relative;
 
         img {
+          cursor: pointer;
           border-radius: 5px;
           min-width: 100%;
           animation: imgScale 1s infinite;
@@ -99,6 +99,7 @@
       // 點擊按鈕
       > button {
         cursor: pointer;
+        background: linear-gradient(360deg, #f6f2bc 19%, #f5ecce 100%);
         margin-top: 30px;
         width: 100%;
         border-radius: 5px;
@@ -184,7 +185,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: url("../image/RedSM02.svg");
+    background-image: url("../image/RedSM1.svg");
     background-repeat: no-repeat;
     background-position: center;
   }
@@ -394,6 +395,90 @@
 }
 
 @media all and (max-width: 576px) {
+  
+  .btn {
+    display: flex;
+
+    > a {
+      width: 100%;
+      font-size: 1rem;
+    }
+  }
+  
+  .envelopes {
+    > ul {
+      > li {
+        // 預設動畫紅包圖片
+        margin: 0 10px;
+        > .env_img {
+          // 顯示數字
+          > span {
+            font-size: 1rem;
+          }
+        }
+      }
+
+      // 點擊按鈕
+      > button {
+        font-size: 1.125rem;
+      }
+    }
+  }
+
+  .envelopes_Open {
+    // border: 1px solid blue;
+    width: 265px;
+    height: 400px;
+
+    //信封開啟
+    .envelopes_OpenTop {
+
+    }
+    //信封開啟新增class
+    .elp_OpenTop {
+      transform: rotateX(180deg);
+      transform-origin: top;
+      animation: topAnimate 1s;
+      //打開信封袋
+      @keyframes topAnimate {
+        0% {
+          transform: rotateX(0deg);
+        }
+        100% {
+          transform: rotateX(180deg);
+        }
+      }
+    }
+
+    // 信封內容
+    .envelopes_contant {
+
+      // 中獎文字
+      .envelopes_contant_tit {
+        font-size: 1.5rem;
+      }
+
+      // 金額
+      .envelopes_contant_dollar {
+        font-size: 2.5rem;
+      }
+
+      // 連結
+      .envelopes_contant_link {
+        justify-content: center;
+
+        > a {
+          width: 40%;
+          padding: 10px;
+          font-size: 1rem;
+          margin: 5px;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 370px) {
   .envelopes {
     > ul {
       > li {
@@ -401,22 +486,14 @@
         > .env_img {
           // 顯示數字
           > span {
-            font-size: 1.25rem;
+            font-size: 0.875rem;
           }
         }
       }
 
       // 點擊按鈕
       > button {
-        cursor: pointer;
-        margin-top: 30px;
-        width: 100%;
-        border-radius: 5px;
-        border: 0;
-        padding: 6px;
-        font-weight: 900;
-        letter-spacing: 1px;
-        font-size: 1.125rem;
+        font-size: 1rem;
       }
     }
   }

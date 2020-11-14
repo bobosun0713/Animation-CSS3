@@ -1,14 +1,13 @@
 // 按鈕控制
-.btn{
+.btn {
   top: 5%;
   left: 50%;
-  transform: translate(-50%,0);
+  transform: translate(-50%, 0);
   position: fixed;
   z-index: 99;
   text-align: center;
 
-
-  >a{
+  > a {
     width: 80px;
     border-radius: 10px;
     text-decoration: none;
@@ -22,10 +21,6 @@
     margin: 5px;
   }
 }
-
-
-
-
 
 .Warp {
   box-sizing: border-box;
@@ -42,8 +37,6 @@
   z-index: 30;
   transition: all 1s;
 }
-
-
 
 // 背景動畫
 .BackAnimate {
@@ -303,7 +296,7 @@
   .coin {
     background-color: transparent;
     position: absolute;
-    background-image: url(../image/coin.png);
+    background-image: url(../image/coin.svg);
 
     background-size: cover;
     background-repeat: no-repeat;
@@ -371,7 +364,7 @@
       width: 90%;
       height: 92%;
       border: 2px solid #d88f25;
-      border-radius:20px;
+      border-radius: 20px;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -541,7 +534,7 @@
   z-index: 2;
   overflow: unset;
   .PageCon_SpaceAnimation {
-    top:20%;
+    top: 20%;
     height: 550px;
     border-radius: 25px;
     animation: space 0.8s;
@@ -572,6 +565,15 @@
 
 // RWD =====================================================================
 @media all and (max-width: 576px) {
+  .btn {
+    display: flex;
+
+    > a {
+      width: 100%;
+      font-size: 1rem;
+    }
+  }
+
   .RedPage {
     -webkit-tap-highlight-color: transparent;
     transform: translate(-50%, -50%);

@@ -6,6 +6,7 @@
   position: fixed;
   z-index: 99;
   text-align: center;
+  display: flex;
 }
 
 .btn > a {
@@ -22,16 +23,17 @@
   margin: 5px;
 }
 
-.Wrap * {
+.RedWrap * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   list-style: none;
   outline: none;
   font-family: "微軟正黑體";
+  -webkit-tap-highlight-color: transparent;
 }
 
-.Wrap {
+.RedWrap {
   position: fixed;
   background-color: rgba(0, 0, 0, 0.7);
   top: 0;
@@ -67,6 +69,7 @@
 }
 
 .envelopes > ul > li > .env_img img {
+  cursor: pointer;
   border-radius: 5px;
   min-width: 100%;
   animation: imgScale 1s infinite;
@@ -88,6 +91,7 @@
 
 .envelopes > ul > li > button {
   cursor: pointer;
+  background: linear-gradient(360deg, #f6f2bc 19%, #f5ecce 100%);
   margin-top: 30px;
   width: 100%;
   border-radius: 5px;
@@ -167,7 +171,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: url("../image/RedSM02.svg");
+  background-image: url("../image/RedSM1.svg");
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -349,19 +353,62 @@
 }
 
 @media all and (max-width: 576px) {
+  .btn {
+    display: flex;
+  }
+  .btn > a {
+    width: 100%;
+    font-size: 1rem;
+  }
+  .envelopes > ul > li {
+    margin: 0 10px;
+  }
   .envelopes > ul > li > .env_img > span {
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
   .envelopes > ul > button {
-    cursor: pointer;
-    margin-top: 30px;
-    width: 100%;
-    border-radius: 5px;
-    border: 0;
-    padding: 6px;
-    font-weight: 900;
-    letter-spacing: 1px;
     font-size: 1.125rem;
+  }
+  .envelopes_Open {
+    width: 265px;
+    height: 400px;
+  }
+  .envelopes_Open .elp_OpenTop {
+    transform: rotateX(180deg);
+    transform-origin: top;
+    animation: topAnimate 1s;
+  }
+  @keyframes topAnimate {
+    0% {
+      transform: rotateX(0deg);
+    }
+    100% {
+      transform: rotateX(180deg);
+    }
+  }
+  .envelopes_Open .envelopes_contant .envelopes_contant_tit {
+    font-size: 1.5rem;
+  }
+  .envelopes_Open .envelopes_contant .envelopes_contant_dollar {
+    font-size: 2.5rem;
+  }
+  .envelopes_Open .envelopes_contant .envelopes_contant_link {
+    justify-content: center;
+  }
+  .envelopes_Open .envelopes_contant .envelopes_contant_link > a {
+    width: 40%;
+    padding: 10px;
+    font-size: 1rem;
+    margin: 5px;
+  }
+}
+
+@media all and (max-width: 370px) {
+  .envelopes > ul > li > .env_img > span {
+    font-size: 0.875rem;
+  }
+  .envelopes > ul > button {
+    font-size: 1rem;
   }
 }
 /*# sourceMappingURL=animate03.css.map */

@@ -285,17 +285,46 @@
 .PageTop .coin {
   background-color: transparent;
   position: absolute;
-  background-image: url(../image/coin.png);
-  background-size: cover;
+  background-image: url(../image/coin.svg);
+  background-size: 70% 70%;
+  background-position: center;
   background-repeat: no-repeat;
   left: 50%;
   transform: translate(-50%, 0%);
   backface-visibility: hidden;
   z-index: 3;
   transition: all 0.8s;
-  width: 150px;
-  height: 150px;
-  bottom: -75px;
+  width: 200px;
+  height: 200px;
+  bottom: -100px;
+}
+
+.PageTop .coin::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  right: -40px;
+  bottom: 15px;
+  background-image: url(../image/finger.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: rotate(30deg) translateX(0px);
+  animation: finger 1s infinite;
+  transition: all 0.8s;
+}
+
+@keyframes finger {
+  0% {
+    transform: rotate(30deg) translateX(0px);
+  }
+  50% {
+    transform: rotate(30deg) translateX(-13px);
+  }
+  100% {
+    transform: rotate(30deg) translateX(0px);
+  }
 }
 
 .PageTop .conin--active {
@@ -482,6 +511,13 @@
 }
 
 @media all and (max-width: 576px) {
+  .btn {
+    display: flex;
+  }
+  .btn > a {
+    width: 100%;
+    font-size: 1rem;
+  }
   .RedPage {
     -webkit-tap-highlight-color: transparent;
     transform: translate(-50%, -50%);
@@ -493,9 +529,16 @@
     width: 250px;
   }
   .PageTop .coin {
-    width: 70px;
-    height: 70px;
-    bottom: -35px;
+    width: 100px;
+    height: 100px;
+    bottom: -50px;
+  }
+  .PageTop .coin::before {
+    width: 30px;
+    height: 30px;
+    right: -30px;
+    bottom: 10px;
+    transform: rotate(30deg) translateX(0px);
   }
   .PageTop::before {
     width: 65%;

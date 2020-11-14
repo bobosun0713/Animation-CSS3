@@ -285,7 +285,7 @@
 .PageTop .coin {
   background-color: transparent;
   position: absolute;
-  background-image: url(../image/coin.png);
+  background-image: url(../image/coin.svg);
   background-size: cover;
   background-repeat: no-repeat;
   left: 50%;
@@ -507,6 +507,13 @@
 }
 
 @media all and (max-width: 576px) {
+  .btn {
+    display: flex;
+  }
+  .btn > a {
+    width: 100%;
+    font-size: 1rem;
+  }
   .RedPage {
     -webkit-tap-highlight-color: transparent;
     transform: translate(-50%, -50%);
