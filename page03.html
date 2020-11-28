@@ -1,147 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="css/animate04.css" />
-  </head>
-  <body>
-    <div class="wrap">
-      <div class="redWrap">
-        <!-- <div class="redWrap_item">
-          <div class="redWrap_item_cir">
-            <span>12</span>
-          </div>
-        </div> -->
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="css/animate04.css" />
+</head>
+
+<body>
+  <div class="wrap">
+
+
+    <div class="redWrap">
+
+
+      <div class="redWrap_item">
+        <div class="redWrap_item_cir">
+          <span>12</span>
+        </div>
       </div>
+
+
     </div>
 
-    <script>
-      let arr = [
-        {
-          id: "1",
-          price: "10",
-          deg: 360,
-        },
-        {
-          id: "2",
-          price: "20",
-          deg: 320,
-        },
-        {
-          id: "3",
-          price: "30",
-          deg: 280,
-        },
-        {
-          id: "4",
-          price: "40",
-          deg: 240,
-        },
-        {
-          id: "5",
-          price: "50",
-          deg: 200,
-        },
-        {
-          id: "6",
-          price: "60",
-          deg: 160,
-        },
-        {
-          id: "7",
-          price: "70",
-          deg: 120,
-        },
-        {
-          id: "8",
-          price: "80",
-          deg: 80,
-        },
-        {
-          id: "9",
-          price: "90",
-          deg: 40,
-        },
-      ];
 
-      let redWrap = document.querySelector(".redWrap");
+
+  </div>
+
+  <script>
+    let arr = [
+      {
+        id: "1",
+        price: "10",
+        deg: 0,
+      },
+      {
+        id: "2",
+        price: "20",
+        deg: 0,
+      },
+      {
+        id: "3",
+        price: "30",
+        deg: 0,
+      },
+      {
+        id: "4",
+        price: "40",
+        deg: 0,
+      },
+      {
+        id: "5",
+        price: "50",
+        deg: 0,
+      },
+      {
+        id: "6",
+        price: "60",
+        deg: 0,
+      },
+      {
+        id: "7",
+        price: "70",
+        deg: 0,
+      },
+      {
+        id: "8",
+        price: "80",
+        deg: 0,
+      },
+      {
+        id: "9",
+        price: "90",
+        deg: 0
+      },
+      
+    ];
+
+    let redWrap = document.querySelector(".redWrap");
+    for (let i = 0; i < arr.length; i++) {
+      // 外層 DIV
+      let divOut = document.createElement("div");
+      divOut.setAttribute("class", "redWrap_item");
+      // 計算資料裡面有幾筆資料除已長度，就能計算轉角度的值，加 90 / (all.length/2)是補齊指針與轉盤置中的角度
+      divOut.style.transform = `rotate(${(360 / arr.length) * i + 90 / (arr.length / 2).toFixed(2)}deg)`;
+
+      // 內層 DIV
+      let divIn = document.createElement("div");
+      divIn.setAttribute("class", "redWrap_item_cir");
+      //動態計算獎品有幾個，自動分配內原角度
+      divIn.style.transform = `rotate(${(180 - (360 / arr.length)).toFixed(2)}deg)`;
+
+      // 內層獎品 - 金額
+      let coIn = document.createElement("span");
+      coIn.innerText = `${arr[i].price}元`;
+
+      // 內層獎品 - 判斷物品有幾個，自動計算角度四捨五入
+      arr[i].deg += (360 / arr.length) * (arr.length - i);
+      console.log(arr[i]);
+
+      // 塞入內層 DIV
+      divIn.appendChild(coIn);
+
+      // 內層塞入外層DIV裡 , 組合起來
+      divOut.appendChild(divIn);
+
+      // 組合好後塞入最外層DIV
+      redWrap.appendChild(divOut);
+    }
+
+    // 初始圈數
+    let nowDeg = 1800;
+    // 計算好的角度
+    let dbDeg = 0;
+    // 獲取得到訊息
+    let Msg = "";
+
+    redWrap.addEventListener("click", function (e) {
+      if (redWrap.style.transition.indexOf("all") === 0) {
+        console.log("阻擋");
+        return;
+      }
+
+      // 點擊時增加動畫屬性，當轉完時會消除，此時再點會沒有動畫效果
+      // 當點擊時增加動畫屬性，結束時消除動畫屬性，以此類推
+      redWrap.style.transition = "all 3s ease-in-out";
+
+      //從資料當中獲取所要轉的角度
+      nowDeg += arr[rand(0, 8)].deg;
+      redWrap.style.transform = `rotate(${nowDeg}deg)`;
+
+
+      // 把值紀錄下來，並停在該角度上
+      dbDeg = nowDeg - 1800;
+      console.log(dbDeg);
+
+      // 離開時，把預設轉圈數再設回預設，不然預設值會越加來越大
+      nowDeg = 1800;
+    });
+
+    // 當動畫結束時
+    redWrap.addEventListener("transitionend", function () {
+      // 動畫結束時，消除動畫效果，避免反轉的動畫
+      redWrap.style.transition = "unset";
+      //紀錄最後一個角度並固定住，接下去後面的轉盤
+      redWrap.style.transform = `rotate(${dbDeg}deg)`;
+
       for (let i = 0; i < arr.length; i++) {
-        // 外層 DIV
-        let divOut = document.createElement("div");
-        divOut.setAttribute("class", "redWrap_item");
-        // 計算資料裡面有幾筆資料除已長度，就能計算轉角度的值，加20是補齊指針與轉盤置中的角度
-        divOut.style.transform = `rotate(${(360 / arr.length) * i + 20}deg)`;
-
-        // 內層 DIV
-        let divIn = document.createElement("div");
-        divIn.setAttribute("class", "redWrap_item_cir");
-
-        // 內層 品項
-        let coIn = document.createElement("span");
-        coIn.innerText = `${arr[i].price}元`;
-
-        // 塞入內層 DIV
-        divIn.appendChild(coIn);
-
-        // 內層塞入外層DIV裡 , 組合起來
-        divOut.appendChild(divIn);
-
-        // 組合好後塞入最外層DIV
-        redWrap.appendChild(divOut);
+        if (dbDeg === arr[i].deg) msg = `恭喜獲得${arr[i].price}元`;
       }
+      // setTimeout(function () {
+      //   alert(msg);
+      // }, 1000);
+    });
 
-      // 初始圈數
-      let nowDeg = 1080;
-      // 計算好的角度
-      let dbDeg = 0;
-      // 獲取得到訊息
-      let Msg = "";
+    //測試用亂數，模擬使用者抽獎
+    function rand(min, max) {
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+  </script>
+</body>
 
-      redWrap.addEventListener("click", function (e) {
-        if (redWrap.style.transition.indexOf("all") === 0) {
-          console.log("阻擋");
-          return;
-        }
-
-        console.log(redWrap.style.transition.indexOf("all"));
-
-        // 點擊時增加動畫屬性，當轉完時會消除，此時再點會沒有動畫效果
-        // 當點擊時增加動畫屬性，結束時消除動畫屬性，以此類推
-        redWrap.style.transition = "all 2.5s ease-in-out";
-
-        //從資料當中獲取所要轉的角度
-        nowDeg += arr[rand(0, 8)].deg;
-
-        // 把值紀錄下來，並停在該角度上
-        dbDeg = nowDeg - 1080;
-
-        redWrap.style.transform = `rotate(${nowDeg}deg)`;
-
-        // 離開時，把預設轉圈數再設回預設，不然預設值會越加來越大
-        nowDeg = 1080;
-      });
-
-      // 當動畫結束時
-      redWrap.addEventListener("transitionend", function () {
-        // 動畫結束時，消除動畫效果，避免反轉的動畫
-        redWrap.style.transition = "unset";
-        //紀錄最後一個角度並固定住，接下去後面的轉盤
-        redWrap.style.transform = `rotate(${dbDeg}deg)`;
-
-        for (let i = 0; i < arr.length; i++) {
-          if (dbDeg === arr[i].deg) msg = `恭喜獲得${arr[i].price}元`;
-        }
-        setTimeout(function () {
-          alert(msg);
-        }, 1000);
-      });
-
-      //測試用亂數，模擬使用者抽獎
-      function rand(min, max) {
-        return Math.floor(Math.random() * (max - min + 1) + min);
-      }
-    </script>
-  </body>
 </html>
