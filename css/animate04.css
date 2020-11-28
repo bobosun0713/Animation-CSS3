@@ -17,14 +17,69 @@ body {
   align-items: center;
 }
 
-.redWrap {
+.rouletteWrap {
+  width: 580px;
+  height: 580px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(../image/Roulette.svg) no-repeat center center;
+  position: relative;
+}
+
+.rouletteWrap .roulette_pointer {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: url(../image/Roulette_pointer.svg) no-repeat center center;
+  top: 160px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.rouletteWrap .roulette_pointer span {
+  display: inline-block;
+  width: 70px;
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  user-select: none;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+  animation: flashing 1s infinite;
+}
+
+@keyframes flashing {
+  0% {
+    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.8), 0 0 20px #f6e58d, 0 0 30px #f6e58d, 0 0 40px #f6e58d;
+  }
+  50% {
+    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.8), 0 0 20px rgba(246, 229, 141, 0.6), 0 0 30px rgba(246, 229, 141, 0.6), 0 0 40px rgba(246, 229, 141, 0.6);
+  }
+  100% {
+    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.8), 0 0 20px #f6e58d, 0 0 30px #f6e58d, 0 0 40px #f6e58d;
+  }
+}
+
+.rouletteWrap .roulette_pointer .txt {
+  width: 100px;
+  bottom: 50px;
+}
+
+.roulette_circle {
   width: 500px;
   height: 500px;
   position: relative;
   overflow: hidden;
 }
 
-.redWrap .redWrap_item {
+.roulette_circle .roulette_circle_item {
   position: absolute;
   top: 0;
   left: 0;
@@ -34,17 +89,16 @@ body {
   overflow: hidden;
 }
 
-.redWrap .redWrap_item .redWrap_item_cir {
+.roulette_circle .roulette_circle_item .roulette_circle_item_cir {
   width: 100%;
   height: 100%;
   background-color: blue;
   border-radius: 250px 0 0 250px;
   transform-origin: 100% 50%;
-  border: 1px solid;
   position: relative;
 }
 
-.redWrap .redWrap_item .redWrap_item_cir span {
+.roulette_circle .roulette_circle_item .roulette_circle_item_cir span {
   position: absolute;
   bottom: 30px;
   right: 40px;
@@ -53,15 +107,15 @@ body {
   color: white;
 }
 
-.redWrap .redWrap_item:nth-of-type(3n + 1) .redWrap_item_cir {
-  background-color: #5858ec;
+.roulette_circle .roulette_circle_item:nth-of-type(3n + 1) .roulette_circle_item_cir {
+  background-color: #38a0e7;
 }
 
-.redWrap .redWrap_item:nth-of-type(3n + 2) .redWrap_item_cir {
-  background-color: #ec5151;
+.roulette_circle .roulette_circle_item:nth-of-type(3n + 2) .roulette_circle_item_cir {
+  background-color: #e65051;
 }
 
-.redWrap .redWrap_item:nth-of-type(3n + 3) .redWrap_item_cir {
-  background-color: #277c27;
+.roulette_circle .roulette_circle_item:nth-of-type(3n + 3) .roulette_circle_item_cir {
+  background-color: #2eae73;
 }
 /*# sourceMappingURL=animate04.css.map */

@@ -1,72 +1,135 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  html,
-  body {
-    height: 100%;
-    width: 100%;
-  }
-  .wrap {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .redWrap {
-    width: 500px;
-    height: 500px;
-    // border: 1px solid;
-    position: relative;
-    //   transition: all 3s ease-in-out;
-    // transform: rotate(20deg);
-    overflow: hidden;
-  
-    //半圓遮罩
-    .redWrap_item {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+.wrap {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// 轉盤背景
+.rouletteWrap {
+  // background-color: black;
+  width: 580px;
+  height: 580px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(../image/Roulette.svg) no-repeat center center;
+  position: relative;
+
+  // 指針
+  .roulette_pointer {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: url(../image/Roulette_pointer.svg) no-repeat center center;
+    top: 160px;
+    z-index: 1;
+    cursor: pointer;
+
+    // 文字
+    span {
+      display: inline-block;
+      width: 70px;
       position: absolute;
-      top: 0;
+      bottom: 30px;
       left: 0;
-      width: 250px;
-      height: 100%;
-      // background-color: burlywood;
-      transform-origin: 100% 50%;
-      overflow: hidden;
-  
-      //實際看到半圓
-      .redWrap_item_cir {
-        width: 100%;
-        height: 100%;
-        background-color: blue;
-        border-radius: 250px 0 0 250px;
-        // transform: rotate(140deg);
-        transform-origin: 100% 50%;
-        border: 1px solid;
-        position: relative;
-  
-        //輪盤獎品
-        span {
-          position: absolute;
-          bottom: 30px;
-          right: 40px;
-          //   left: 0;
-          font-size: 2rem;
-          transform: rotate(-160deg);
-          color: white;
+      right: 0;
+      margin: 0 auto;
+      // border: 1px solid;
+
+      user-select: none;
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #fff;
+      animation: flashing 1s infinite;
+      @keyframes flashing {
+        0% {
+          text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.8), 0 0 20px rgba(246, 229, 141, 1),
+            0 0 30px rgba(246, 229, 141, 1), 0 0 40px rgba(246, 229, 141, 1);
+        }
+        50% {
+          text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.8), 0 0 20px rgba(246, 229, 141, 0.6),
+            0 0 30px rgba(246, 229, 141, 0.6), 0 0 40px rgba(246, 229, 141, 0.6);
+        }
+        100% {
+          text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.8), 0 0 20px rgba(246, 229, 141, 1),
+            0 0 30px rgba(246, 229, 141, 1), 0 0 40px rgba(246, 229, 141, 1);
         }
       }
     }
-    // 顏色
-    .redWrap_item:nth-of-type(3n + 1) .redWrap_item_cir {
-      background-color: rgb(88, 88, 236);
-    }
-    .redWrap_item:nth-of-type(3n + 2) .redWrap_item_cir {
-      background-color: rgb(236, 81, 81);
-    }
-    .redWrap_item:nth-of-type(3n + 3) .redWrap_item_cir {
-      background-color: rgb(39, 124, 39);
+
+    // 抽獎時更換 加入文字class
+    .txt{
+      width: 100px;
+      bottom: 50px;
     }
   }
-  
+}
+
+.roulette_circle {
+  width: 500px;
+  height: 500px;
+  // border: 1px solid;
+  position: relative;
+  //   transition: all 3s ease-in-out;
+  // transform: rotate(20deg);
+  overflow: hidden;
+
+  //半圓遮罩
+  .roulette_circle_item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    // background-color: burlywood;
+    transform-origin: 100% 50%;
+    overflow: hidden;
+
+    //實際看到半圓
+    .roulette_circle_item_cir {
+      width: 100%;
+      height: 100%;
+      background-color: blue;
+      border-radius: 250px 0 0 250px;
+      // transform: rotate(140deg);
+      transform-origin: 100% 50%;
+      // border: .5px solid #333;
+      position: relative;
+
+      //輪盤獎品
+      span {
+        position: absolute;
+        bottom: 30px;
+        right: 40px;
+        //   left: 0;
+        font-size: 2rem;
+        transform: rotate(-160deg);
+        color: white;
+      }
+    }
+  }
+  // 顏色
+  .roulette_circle_item:nth-of-type(3n + 1) .roulette_circle_item_cir {
+    background-color: rgb(56, 160, 231);
+  }
+  .roulette_circle_item:nth-of-type(3n + 2) .roulette_circle_item_cir {
+    background-color: rgb(230, 80, 81);
+  }
+  .roulette_circle_item:nth-of-type(3n + 3) .roulette_circle_item_cir {
+    background-color: rgb(46, 174, 115);
+  }
+}
