@@ -11,9 +11,9 @@
 <body>
   <div class="wrap">
 
-    <div class="rouletteWrap">
+    <div class="rouletteWrap ">
       <div class="roulette_pointer">
-        <span>開始抽獎</span>
+        <span>點我抽獎</span>
       </div>
       <div class="roulette_circle">
         <!-- <div class="roulette_circle_item">
@@ -114,7 +114,7 @@
     }
 
     // 初始圈數
-    let nowDeg = 1800;
+    let nowDeg = 2880;
     // 計算好的角度
     let dbDeg = 0;
     // 獲取得到訊息
@@ -124,6 +124,8 @@
     let pointer = document.querySelector(".roulette_pointer");
     // 輪盤指針文子
     let pointerTxt = document.querySelector(".roulette_pointer > span");
+    // 輪盤
+    let rouletteWrap =document.querySelector('.rouletteWrap');
     pointer.addEventListener("click", function (e) {
       if (roulette_C.style.transition.indexOf("all") === 0) {
         // console.log("阻擋");
@@ -132,7 +134,10 @@
 
       // 點擊抽獎時改變文字
       pointerTxt.classList.add('txt')
-      pointerTxt.innerText = "抽獎中"
+      pointerTxt.innerText = "抽獎中";
+
+      //轉動動畫
+      rouletteWrap.classList.add('rouletteBack')
 
       // 點擊時增加動畫屬性，當轉完時會消除，此時再點會沒有動畫效果。
       // 當點擊時增加動畫屬性，結束時消除動畫屬性，以此類推。
@@ -143,19 +148,24 @@
       roulette_C.style.transform = `rotate(${nowDeg}deg)`;
 
       // 把值紀錄下來，並停在該角度上。
-      dbDeg = nowDeg - 1800;
+      dbDeg = nowDeg - 2880;
       console.log(dbDeg);
 
       // 圈數轉完時，把預設轉圈數再設回預設，不然預設值會越加來越大。
-      nowDeg = 1800;
+      nowDeg = 2880;
     });
 
     // 當動畫結束時
     roulette_C.addEventListener("transitionend", function () {
 
       // 抽獎動畫結束改變
-      pointerTxt.classList.remove('txt')
-      pointerTxt.innerText = "開始抽獎"
+      pointerTxt.classList.remove('txt');
+      pointerTxt.innerText = "點我抽獎";
+
+      
+      //轉動動畫
+      rouletteWrap.classList.remove('rouletteBack')
+
 
       // 動畫結束時，消除動畫效果，避免反轉的動畫，模擬圈數累計。
       roulette_C.style.transition = "unset";

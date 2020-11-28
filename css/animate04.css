@@ -23,7 +23,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url(../image/Roulette.svg) no-repeat center center;
+  background: url(../image/RouletteGif1.gif) no-repeat center center;
+  background-size: cover;
   position: relative;
 }
 
@@ -70,6 +71,11 @@ body {
 .rouletteWrap .roulette_pointer .txt {
   width: 100px;
   bottom: 50px;
+}
+
+.rouletteBack {
+  background: url(../image/RouletteGif2.gif) no-repeat center center;
+  background-size: cover;
 }
 
 .roulette_circle {

@@ -23,7 +23,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url(../image/Roulette.svg) no-repeat center center;
+  background: url(../image/RouletteGif1.gif) no-repeat center center;
+  background-size: cover;
+  // background: url(../image/Roulette.svg) no-repeat center center;
   position: relative;
 
   // 指針
@@ -72,11 +74,16 @@ body {
     }
 
     // 抽獎時更換 加入文字class
-    .txt{
+    .txt {
       width: 100px;
       bottom: 50px;
     }
   }
+}
+// 更改轉盤背景
+.rouletteBack{
+  background: url(../image/RouletteGif2.gif) no-repeat center center;
+  background-size: cover;
 }
 
 .roulette_circle {
