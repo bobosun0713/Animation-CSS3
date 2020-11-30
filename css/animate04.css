@@ -18,6 +18,7 @@ body {
 }
 
 .rouletteWrap {
+  -webkit-tap-highlight-color: transparent;
   width: 590px;
   height: 590px;
   display: flex;
