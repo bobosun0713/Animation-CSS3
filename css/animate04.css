@@ -187,7 +187,8 @@ body {
     width: 235px;
   }
   .roulette_circle .roulette_circle_item .roulette_circle_item_cir span {
-    right: 25px;
+    right: 35px;
+    bottom: 35px;
   }
 }
 
@@ -228,7 +229,7 @@ body {
   }
   .roulette_circle .roulette_circle_item .roulette_circle_item_cir span {
     font-size: 1.8rem;
-    right: 25px;
+    right: 30px;
   }
 }
 
@@ -267,8 +268,8 @@ body {
   }
   .roulette_circle .roulette_circle_item .roulette_circle_item_cir span {
     font-size: 1.5rem;
-    right: 15px;
-    bottom: 20px;
+    right: 25px;
+    bottom: 25px;
   }
 }
 
@@ -308,7 +309,7 @@ body {
   }
   .roulette_circle .roulette_circle_item .roulette_circle_item_cir span {
     font-size: 1.25rem;
-    right: 15px;
+    right: 22.5px;
     bottom: 20px;
   }
 }
