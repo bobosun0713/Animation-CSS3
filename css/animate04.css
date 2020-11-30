@@ -15,6 +15,23 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  background: url(../image/test01.png) no-repeat center center;
+  background-size: cover;
+}
+
+.wrap::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 500px;
+  height: 300px;
+  background: url(../image/test02.png) no-repeat center center;
+  background-size: contain;
+  transition: all 0.8s;
+  top: 0;
+  bottom: -540px;
+  margin: auto 0;
 }
 
 .rouletteWrap {
@@ -87,8 +104,8 @@ body {
 }
 
 .roulette_circle {
-  width: 500px;
-  height: 500px;
+  width: 505px;
+  height: 505px;
   position: relative;
   overflow: hidden;
 }
@@ -97,7 +114,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 250px;
+  width: 252.5px;
   height: 100%;
   transform-origin: 100% 50%;
   overflow: hidden;
@@ -107,7 +124,7 @@ body {
   width: 100%;
   height: 100%;
   background-color: blue;
-  border-radius: 250px 0 0 250px;
+  border-radius: 252.5px 0 0 252.5px;
   transform-origin: 100% 50%;
   position: relative;
 }
@@ -135,6 +152,11 @@ body {
 }
 
 @media all and (max-width: 676px) {
+  .wrap::before {
+    width: 450px;
+    height: 300px;
+    bottom: -520px;
+  }
   .rouletteWrap {
     width: 550px;
     height: 550px;
@@ -154,11 +176,11 @@ body {
     bottom: 45px;
   }
   .roulette_circle {
-    width: 465px;
-    height: 465px;
+    width: 470px;
+    height: 470px;
   }
   .roulette_circle .roulette_circle_item {
-    width: 232.5px;
+    width: 235px;
   }
   .roulette_circle .roulette_circle_item .roulette_circle_item_cir span {
     right: 25px;
@@ -166,6 +188,11 @@ body {
 }
 
 @media all and (max-width: 576px) {
+  .wrap::before {
+    width: 400px;
+    height: 300px;
+    bottom: -470px;
+  }
   .rouletteWrap {
     width: 500px;
     height: 500px;
@@ -185,14 +212,14 @@ body {
     bottom: 45px;
   }
   .roulette_circle {
-    width: 420px;
-    height: 420px;
+    width: 425px;
+    height: 425px;
   }
   .roulette_circle .roulette_circle_item {
-    width: 210px;
+    width: 212.5px;
   }
   .roulette_circle .roulette_circle_item .roulette_circle_item_cir {
-    border-radius: 210px 0 0 210px;
+    border-radius: 212.5px 0 0 212.5px;
   }
   .roulette_circle .roulette_circle_item .roulette_circle_item_cir span {
     font-size: 1.8rem;
@@ -201,6 +228,10 @@ body {
 }
 
 @media all and (max-width: 499px) {
+  .wrap::before {
+    width: 350px;
+    bottom: -360px;
+  }
   .rouletteWrap {
     width: 400px;
     height: 400px;
@@ -220,14 +251,14 @@ body {
     bottom: 35px;
   }
   .roulette_circle {
-    width: 339px;
-    height: 339px;
+    width: 341px;
+    height: 341px;
   }
   .roulette_circle .roulette_circle_item {
-    width: 169.5px;
+    width: 170.5px;
   }
   .roulette_circle .roulette_circle_item .roulette_circle_item_cir {
-    border-radius: 169.5px 0 0 169.5px;
+    border-radius: 170.5px 0 0 170.5px;
   }
   .roulette_circle .roulette_circle_item .roulette_circle_item_cir span {
     font-size: 1.5rem;
@@ -237,6 +268,10 @@ body {
 }
 
 @media all and (max-width: 411px) {
+  .wrap::before {
+    width: 280px;
+    bottom: -320px;
+  }
   .rouletteWrap {
     width: 340px;
     height: 340px;
@@ -256,14 +291,14 @@ body {
     bottom: 27.5px;
   }
   .roulette_circle {
-    width: 285px;
-    height: 285px;
+    width: 290px;
+    height: 290px;
   }
   .roulette_circle .roulette_circle_item {
-    width: 142.5px;
+    width: 145px;
   }
   .roulette_circle .roulette_circle_item .roulette_circle_item_cir {
-    border-radius: 142.5px 0 0 142.5px;
+    border-radius: 145px 0 0 145px;
   }
   .roulette_circle .roulette_circle_item .roulette_circle_item_cir span {
     font-size: 1.25rem;

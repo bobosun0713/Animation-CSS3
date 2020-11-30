@@ -13,6 +13,25 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  background: url(../image/test01.png) no-repeat center center;
+  background-size: cover;
+
+  //轉盤底座
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 500px;
+    height: 300px;
+    background: url(../image/test02.png) no-repeat center center;
+    background-size: contain;
+    transition: all 0.8s;
+
+    top: 0;
+    bottom: -540px;
+    margin: auto 0;
+  }
 }
 
 // 轉盤背景
@@ -98,11 +117,10 @@ body {
 }
 
 .roulette_circle {
-  width: 500px;
-  height: 500px;
-  // border: 1px solid;
+  width: 505px;
+  height: 505px;
   position: relative;
-  //   transition: all 3s ease-in-out;
+  // transition: all 3s ease-in-out;
   // transform: rotate(20deg);
   overflow: hidden;
 
@@ -111,9 +129,8 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 250px;
+    width: 252.5px;
     height: 100%;
-    // background-color: burlywood;
     transform-origin: 100% 50%;
     overflow: hidden;
 
@@ -122,7 +139,7 @@ body {
       width: 100%;
       height: 100%;
       background-color: blue;
-      border-radius: 250px 0 0 250px;
+      border-radius: 252.5px 0 0 252.5px;
       transform-origin: 100% 50%;
       // transform: rotate(140deg);
       position: relative;
@@ -154,6 +171,15 @@ body {
 
 // RWD
 @media all and (max-width: 676px) {
+  .wrap {
+    //轉盤底座
+    &::before {
+      width: 450px;
+      height: 300px;
+      bottom: -520px;
+    }
+  }
+
   .rouletteWrap {
     width: 550px;
     height: 550px;
@@ -177,12 +203,12 @@ body {
   }
 
   .roulette_circle {
-    width: 465px;
-    height: 465px;
+    width: 470px;
+    height: 470px;
 
     //半圓遮罩
     .roulette_circle_item {
-      width: 232.5px;
+      width: 235px;
 
       //實際看到半圓
       .roulette_circle_item_cir {
@@ -195,6 +221,15 @@ body {
 }
 
 @media all and (max-width: 576px) {
+  .wrap {
+    //轉盤底座
+    &::before {
+      width: 400px;
+      height: 300px;
+      bottom: -470px;
+    }
+  }
+
   .rouletteWrap {
     width: 500px;
     height: 500px;
@@ -218,16 +253,16 @@ body {
   }
 
   .roulette_circle {
-    width: 420px;
-    height: 420px;
+    width: 425px;
+    height: 425px;
 
     //半圓遮罩
     .roulette_circle_item {
-      width: 210px;
+      width: 212.5px;
 
       //實際看到半圓
       .roulette_circle_item_cir {
-        border-radius: 210px 0 0 210px;
+        border-radius: 212.5px 0 0 212.5px;
         span {
           font-size: 1.8rem;
           right: 25px;
@@ -238,6 +273,14 @@ body {
 }
 
 @media all and (max-width: 499px) {
+  .wrap {
+    //轉盤底座
+    &::before {
+      width: 350px;
+      bottom: -360px;
+    }
+  }
+
   .rouletteWrap {
     width: 400px;
     height: 400px;
@@ -261,16 +304,16 @@ body {
   }
 
   .roulette_circle {
-    width: 339px;
-    height: 339px;
+    width: 341px;
+    height: 341px;
 
     //半圓遮罩
     .roulette_circle_item {
-      width: 169.5px;
+      width: 170.5px;
 
       //實際看到半圓
       .roulette_circle_item_cir {
-        border-radius: 169.5px 0 0 169.5px;
+        border-radius: 170.5px 0 0 170.5px;
         span {
           font-size: 1.5rem;
           right: 15px;
@@ -282,6 +325,14 @@ body {
 }
 
 @media all and (max-width: 411px) {
+  .wrap {
+    //轉盤底座
+    &::before {
+      width: 280px;
+      bottom: -320px;
+    }
+  }
+
   .rouletteWrap {
     width: 340px;
     height: 340px;
@@ -305,16 +356,16 @@ body {
   }
 
   .roulette_circle {
-    width: 285px;
-    height: 285px;
+    width: 290px;
+    height: 290px;
 
     //半圓遮罩
     .roulette_circle_item {
-      width: 142.5px;
+      width: 145px;
 
       //實際看到半圓
       .roulette_circle_item_cir {
-        border-radius: 142.5px 0 0 142.5px;
+        border-radius: 145px 0 0 145px;
         span {
           font-size: 1.25rem;
           right: 15px;
