@@ -26,7 +26,7 @@ body {
   position: absolute;
   width: 500px;
   height: 300px;
-  background: url(../image/test02.png) no-repeat center center;
+  background: url(../image/test03.png) no-repeat center center;
   background-size: contain;
   transition: all 0.8s;
   top: 0;
@@ -64,7 +64,7 @@ body {
   display: inline-block;
   width: 70px;
   position: absolute;
-  bottom: 28.5px;
+  bottom: 34px;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -72,25 +72,28 @@ body {
   text-align: center;
   font-size: 1.8rem;
   font-weight: bold;
+  line-height: 30px;
   color: #fff;
+  text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.8), 0 0 20px #f6e58d, 0 0 30px #f6e58d, 0 0 40px #f6e58d;
   animation: flashing 1s infinite;
 }
 
 @keyframes flashing {
   0% {
-    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.8), 0 0 20px #f6e58d, 0 0 30px #f6e58d, 0 0 40px #f6e58d;
+    opacity: 0;
   }
   50% {
-    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.8), 0 0 20px rgba(246, 229, 141, 0.6), 0 0 30px rgba(246, 229, 141, 0.6), 0 0 40px rgba(246, 229, 141, 0.6);
+    opacity: 1;
   }
   100% {
-    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.8), 0 0 20px #f6e58d, 0 0 30px #f6e58d, 0 0 40px #f6e58d;
+    opacity: 0;
   }
 }
 
 .rouletteWrap .roulette_pointer .txt {
   width: 100px;
   bottom: 50px;
+  animation: unset;
 }
 
 .rouletteBG {
@@ -168,7 +171,8 @@ body {
   }
   .rouletteWrap .roulette_pointer span {
     width: 70px;
-    bottom: 30px;
+    bottom: 32px;
+    line-height: 26px;
     font-size: 1.5rem;
   }
   .rouletteWrap .roulette_pointer .txt {
@@ -206,6 +210,7 @@ body {
     width: 50px;
     bottom: 30px;
     font-size: 1.25rem;
+    line-height: 23px;
   }
   .rouletteWrap .roulette_pointer .txt {
     width: 100px;
@@ -243,7 +248,7 @@ body {
   }
   .rouletteWrap .roulette_pointer span {
     width: 50px;
-    bottom: 22.5px;
+    bottom: 25px;
     font-size: 1.25rem;
   }
   .rouletteWrap .roulette_pointer .txt {
@@ -282,9 +287,10 @@ body {
     top: 100px;
   }
   .rouletteWrap .roulette_pointer span {
+    line-height: 18px;
     width: 40px;
     bottom: 18px;
-    font-size: 0.875rem;
+    font-size: 1rem;
   }
   .rouletteWrap .roulette_pointer .txt {
     width: 100px;
