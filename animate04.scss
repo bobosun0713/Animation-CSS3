@@ -169,6 +169,119 @@ body {
   }
 }
 
+// 中獎跳窗
+.rouletteMsgWrap {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  .rouletteMsg {
+    width: 800px;
+    height: 800px;
+    background: url(../image/test04.png) no-repeat center center;
+    background-size: contain;
+
+    position: relative;
+    // 文字顯示
+    .rouleMsg_span {
+      height: 200px;
+      line-height: 200px;
+      width: 50%;
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      font-size: 3rem;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    //連結
+    .rouleMsg_link {
+      position: absolute;
+      bottom: 50px;
+      left: 0;
+      right: 0;
+      width: 30%;
+      margin: 0 auto;
+      padding: 8px;
+      border-style: inset;
+      border: 2.5px solid white;
+      border-radius: 30px;
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
+      background-color: #fc5000;
+      color: white;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      animation: linktxt 1s infinite linear;
+      text-shadow: 0.5px 0.5px 1px rgb(85, 84, 84);
+
+      &:hover {
+        background-color: orange;
+      }
+
+      @keyframes linktxt {
+        0% {
+          transform: scale(1.05);
+        }
+        50% {
+          transform: scale(1);
+        }
+        100% {
+          transform: scale(1.05);
+        }
+      }
+    }
+
+    //關閉
+    .rouleMsg_cancel {
+      background-color: rgba(66, 66, 66, 0.6);
+      width: 50px;
+      height: 50px;
+      top: -80px;
+      right: 0;
+      border: 2px solid white;
+      border-radius: 100%;
+      position: absolute;
+      outline: none;
+      cursor: pointer;
+
+      &::before,
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 80%;
+        height: 2px;
+        background-color: white;
+        transform-origin: center center;
+      }
+      &::before {
+        transform: rotate(45deg);
+      }
+      &::after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
 // RWD
 @media all and (max-width: 676px) {
   .wrap {
@@ -217,6 +330,26 @@ body {
           right: 35px;
           bottom: 35px;
         }
+      }
+    }
+  }
+
+  //中獎跳窗
+  .rouletteMsgWrap {
+    .rouletteMsg {
+      // 文字顯示
+      .rouleMsg_span {
+        font-size: 2.5rem;
+      }
+
+      //連結
+      .rouleMsg_link {
+        bottom: 100px;
+      }
+
+      //關閉
+      .rouleMsg_cancel {
+        right: 50px;
       }
     }
   }
@@ -273,6 +406,23 @@ body {
       }
     }
   }
+
+  //中獎跳窗
+  .rouletteMsgWrap {
+    .rouletteMsg {
+      // 文字顯示
+      .rouleMsg_span {
+        font-size: 2rem;
+      }
+
+      //連結
+      .rouleMsg_link {
+        bottom: 150px;
+        padding: 5px;
+        font-size: 1.5rem;
+      }
+    }
+  }
 }
 
 @media all and (max-width: 499px) {
@@ -322,6 +472,30 @@ body {
           right: 25px;
           bottom: 25px;
         }
+      }
+    }
+  }
+
+  //中獎跳窗
+  .rouletteMsgWrap {
+    .rouletteMsg {
+      // 文字顯示
+      .rouleMsg_span {
+        font-size: 1.875rem;
+      }
+
+      //連結
+      .rouleMsg_link {
+        bottom: 200px;
+        font-size: 1.125rem;
+      }
+
+      //關閉
+      .rouleMsg_cancel {
+        width: 40px;
+        height: 40px;
+        top: 80px;
+        right: 40px;
       }
     }
   }
@@ -375,6 +549,27 @@ body {
           right: 22.5px;
           bottom: 20px;
         }
+      }
+    }
+  }
+
+  //中獎跳窗
+  .rouletteMsgWrap {
+    .rouletteMsg {
+      // 文字顯示
+      .rouleMsg_span {
+        font-size: 1.5rem;
+      }
+
+      //連結
+      .rouleMsg_link {
+        bottom: 230px;
+        font-size: 1rem;
+      }
+
+      //關閉
+      .rouleMsg_cancel {
+        top: 120px;
       }
     }
   }

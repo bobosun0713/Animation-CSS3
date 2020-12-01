@@ -14,12 +14,13 @@
         <div class="roulette_pointer">
           <span>點我抽獎</span>
         </div>
-        <div class="roulette_circle">
-          <!-- <div class="roulette_circle_item">
-          <div class="roulette_circle_item_cir">
-            <span>12</span>
-          </div>
-        </div> -->
+        <div class="roulette_circle"></div>
+      </div>
+      <div class="rouletteMsgWrap">
+        <div class="rouletteMsg">
+          <span class="rouleMsg_span">恭喜獲得100元</span>
+          <a href="javescript:;" class="rouleMsg_link">說明詳情</a>
+          <button class="rouleMsg_cancel"></button>
         </div>
       </div>
     </div>
@@ -114,7 +115,7 @@
       let nowDeg = 2880;
       // 計算好的角度
       let dbDeg = 0;
-      // 獲取得到訊息
+      // 獲取得到金額
       let Msg = "";
 
       // 輪盤指針按鈕
@@ -150,6 +151,16 @@
         dbDeg = nowDeg - 2880;
         // console.log(dbDeg);
 
+        //獲取到的金額
+        // arr.forEach(function (val) {
+        //   // console.log(val.deg)
+        //   if (val.deg === dbDeg) {
+        //     Msg = val.price;
+        //     // console.log('金額',Msg)
+        //   }
+        // });
+        Msg = roulettePrice(dbDeg);
+
         // 圈數轉完時，把預設轉圈數再設回預設，不然預設值會越加來越大。
         nowDeg = 2880;
       });
@@ -168,23 +179,63 @@
         //紀錄最後一個角度並固定住，接下去後面的轉盤。
         roulette_C.style.transform = `rotate(${dbDeg}deg)`;
 
-        for (let i = 0; i < arr.length; i++) {
-          if (dbDeg === arr[i].deg) msg = `恭喜獲得${arr[i].price}元`;
-        }
-        // setTimeout(function () {
-        //   alert(msg);
-        // }, 1000);
+        setTimeout(function () {
+          rouletteMsg(Msg);
+        }, 500);
       });
+
+      //指定獎品
+      function rd(price) {
+        let total = arr.filter((item) => item.price === price);
+        return total[0].id;
+      }
+
+      //獲取金額
+      function roulettePrice(Deg) {
+        let num = arr.filter(function (val) {
+          return val.deg === Deg;
+        });
+        return num[0].price;
+      }
+
+      //跳窗訊息(中獎金額)
+      function rouletteMsg(num) {
+        //訊息父子層
+        const msgWrap = document.querySelector(".rouletteMsgWrap");
+        msgWrap.style.display = "flex";
+
+        //中獎金額文字
+        const price = document.querySelector(".rouleMsg_span");
+        price.innerHTML = "恭喜獲得" + num + "元";
+
+        //整個父子層
+        const wrap = document.querySelector(".wrap");
+
+        //關閉按鈕
+        const cancle = document.querySelector(".rouleMsg_cancel");
+        cancle.addEventListener("click", () => {
+          // wrap.style.display = "none";
+          msgWrap.style.display = "none";
+        });
+      }
+
+      //數字跳動
+      function TextRand(total) {
+        let PageTotal = document.querySelector(".rouleMsg_span");
+        let i = 0;
+        function num() {
+          if (i < total) {
+            i++;
+            setTimeout(num, (1 / total) * 100);
+            PageTotal.innerHTML = "恭喜獲得" + i + "元";
+          }
+        }
+        num();
+      }
 
       //測試用亂數，模擬使用者抽獎
       function rand(min, max) {
         return Math.floor(Math.random() * (max - min + 1) + min);
-      }
-
-      //獎品
-      function rd(price) {
-        let total = arr.filter((item) => item.price === price);
-        return total[0].id;
       }
     </script>
   </body>
