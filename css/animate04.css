@@ -25,17 +25,18 @@ body {
   display: block;
   position: absolute;
   width: 500px;
-  height: 300px;
+  height: 250px;
   background: url(../image/test03.png) no-repeat center center;
   background-size: contain;
   transition: all 0.8s;
   top: 0;
-  bottom: -540px;
+  bottom: -470px;
   margin: auto 0;
 }
 
 .rouletteWrap {
   -webkit-tap-highlight-color: transparent;
+  margin-bottom: 60px;
   width: 590px;
   height: 590px;
   display: flex;
@@ -166,8 +167,8 @@ body {
 }
 
 .rouletteMsgWrap .rouletteMsg {
-  width: 800px;
-  height: 800px;
+  width: 650px;
+  height: 650px;
   background: url(../image/test04.png) no-repeat center center;
   background-size: contain;
   position: relative;
@@ -231,7 +232,7 @@ body {
   background-color: rgba(66, 66, 66, 0.6);
   width: 50px;
   height: 50px;
-  top: -80px;
+  top: 0;
   right: 0;
   border: 2px solid white;
   border-radius: 100%;
@@ -267,7 +268,7 @@ body {
   .wrap::before {
     width: 450px;
     height: 300px;
-    bottom: -520px;
+    bottom: -450px;
   }
   .rouletteWrap {
     width: 550px;
@@ -303,10 +304,10 @@ body {
     font-size: 2.5rem;
   }
   .rouletteMsgWrap .rouletteMsg .rouleMsg_link {
-    bottom: 100px;
+    bottom: 40px;
   }
   .rouletteMsgWrap .rouletteMsg .rouleMsg_cancel {
-    right: 50px;
+    right: 30px;
   }
 }
 
@@ -314,7 +315,7 @@ body {
   .wrap::before {
     width: 400px;
     height: 300px;
-    bottom: -470px;
+    bottom: -400px;
   }
   .rouletteWrap {
     width: 500px;
@@ -353,7 +354,7 @@ body {
     font-size: 2rem;
   }
   .rouletteMsgWrap .rouletteMsg .rouleMsg_link {
-    bottom: 150px;
+    bottom: 90px;
     padding: 5px;
     font-size: 1.5rem;
   }
@@ -362,7 +363,7 @@ body {
 @media all and (max-width: 499px) {
   .wrap::before {
     width: 350px;
-    bottom: -360px;
+    bottom: -300px;
   }
   .rouletteWrap {
     width: 400px;
@@ -401,21 +402,21 @@ body {
     font-size: 1.875rem;
   }
   .rouletteMsgWrap .rouletteMsg .rouleMsg_link {
-    bottom: 200px;
+    bottom: 120px;
     font-size: 1.125rem;
   }
   .rouletteMsgWrap .rouletteMsg .rouleMsg_cancel {
     width: 40px;
     height: 40px;
     top: 80px;
-    right: 40px;
+    right: 30px;
   }
 }
 
 @media all and (max-width: 411px) {
   .wrap::before {
     width: 280px;
-    bottom: -320px;
+    bottom: -250px;
   }
   .rouletteWrap {
     width: 340px;
@@ -455,11 +456,8 @@ body {
     font-size: 1.5rem;
   }
   .rouletteMsgWrap .rouletteMsg .rouleMsg_link {
-    bottom: 230px;
+    bottom: 160px;
     font-size: 1rem;
-  }
-  .rouletteMsgWrap .rouletteMsg .rouleMsg_cancel {
-    top: 120px;
   }
 }
 /*# sourceMappingURL=animate04.css.map */

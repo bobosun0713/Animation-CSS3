@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 html,
 body {
   height: 100%;
@@ -24,13 +25,13 @@ body {
     display: block;
     position: absolute;
     width: 500px;
-    height: 300px;
+    height: 250px;
     background: url(../image/test03.png) no-repeat center center;
     background-size: contain;
     transition: all 0.8s;
 
     top: 0;
-    bottom: -540px;
+    bottom: -470px;
     margin: auto 0;
   }
 }
@@ -38,6 +39,7 @@ body {
 // 轉盤背景
 .rouletteWrap {
   -webkit-tap-highlight-color: transparent;
+  margin-bottom: 60px;
   width: 590px;
   height: 590px;
   display: flex;
@@ -182,8 +184,9 @@ body {
   align-items: center;
 
   .rouletteMsg {
-    width: 800px;
-    height: 800px;
+    // border: 1px solid;
+    width: 650px;
+    height: 650px;
     background: url(../image/test04.png) no-repeat center center;
     background-size: contain;
 
@@ -249,7 +252,7 @@ body {
       background-color: rgba(66, 66, 66, 0.6);
       width: 50px;
       height: 50px;
-      top: -80px;
+      top: 0;
       right: 0;
       border: 2px solid white;
       border-radius: 100%;
@@ -289,7 +292,7 @@ body {
     &::before {
       width: 450px;
       height: 300px;
-      bottom: -520px;
+      bottom: -450px;
     }
   }
 
@@ -344,12 +347,12 @@ body {
 
       //連結
       .rouleMsg_link {
-        bottom: 100px;
+        bottom: 40px;
       }
 
       //關閉
       .rouleMsg_cancel {
-        right: 50px;
+        right: 30px;
       }
     }
   }
@@ -361,7 +364,7 @@ body {
     &::before {
       width: 400px;
       height: 300px;
-      bottom: -470px;
+      bottom: -400px;
     }
   }
 
@@ -417,7 +420,7 @@ body {
 
       //連結
       .rouleMsg_link {
-        bottom: 150px;
+        bottom: 90px;
         padding: 5px;
         font-size: 1.5rem;
       }
@@ -430,7 +433,7 @@ body {
     //轉盤底座
     &::before {
       width: 350px;
-      bottom: -360px;
+      bottom: -300px;
     }
   }
 
@@ -486,7 +489,7 @@ body {
 
       //連結
       .rouleMsg_link {
-        bottom: 200px;
+        bottom: 120px;
         font-size: 1.125rem;
       }
 
@@ -495,7 +498,7 @@ body {
         width: 40px;
         height: 40px;
         top: 80px;
-        right: 40px;
+        right: 30px;
       }
     }
   }
@@ -506,7 +509,7 @@ body {
     //轉盤底座
     &::before {
       width: 280px;
-      bottom: -320px;
+      bottom: -250px;
     }
   }
 
@@ -563,13 +566,8 @@ body {
 
       //連結
       .rouleMsg_link {
-        bottom: 230px;
+        bottom: 160px;
         font-size: 1rem;
-      }
-
-      //關閉
-      .rouleMsg_cancel {
-        top: 120px;
       }
     }
   }
