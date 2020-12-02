@@ -8,7 +8,7 @@
   </head>
 
   <body>
-    <div class="wrap">
+    <div class="Rwrap">
       <div class="rouletteWrap">
         <div class="rouletteBG"></div>
         <div class="roulette_pointer">
@@ -209,7 +209,7 @@
         price.innerHTML = "恭喜獲得" + num + "元";
 
         //整個父子層
-        const wrap = document.querySelector(".wrap");
+        const wrap = document.querySelector(".Rwrap");
 
         //關閉按鈕
         const cancle = document.querySelector(".rouleMsg_cancel");
@@ -219,19 +219,6 @@
         });
       }
 
-      //數字跳動
-      function TextRand(total) {
-        let PageTotal = document.querySelector(".rouleMsg_span");
-        let i = 0;
-        function num() {
-          if (i < total) {
-            i++;
-            setTimeout(num, (1 / total) * 100);
-            PageTotal.innerHTML = "恭喜獲得" + i + "元";
-          }
-        }
-        num();
-      }
 
       //測試用亂數，模擬使用者抽獎
       function rand(min, max) {

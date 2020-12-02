@@ -1,26 +1,19 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html,
-body {
+@charset "UTF-8";
+.Rwrap {
   height: 100%;
   width: 100%;
-}
-
-.wrap {
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
   background: url(../image/test01.png) no-repeat center center;
   background-size: cover;
+  font-family: "微軟正黑體","Microsoft JhengHei";
 }
 
-.wrap::before {
+.Rwrap::before {
   content: "";
   display: block;
   position: absolute;
@@ -29,9 +22,9 @@ body {
   background: url(../image/test03.png) no-repeat center center;
   background-size: contain;
   transition: all 0.8s;
-  top: 0;
-  bottom: -470px;
-  margin: auto 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 45%);
 }
 
 .rouletteWrap {
@@ -183,7 +176,7 @@ body {
 .rouletteMsgWrap .rouletteMsg .rouleMsg_span {
   height: 200px;
   line-height: 200px;
-  width: 50%;
+  width: 100%;
   display: inline-block;
   position: absolute;
   top: 0;
@@ -271,10 +264,9 @@ body {
 }
 
 @media all and (max-width: 676px) {
-  .wrap::before {
+  .Rwrap::before {
     width: 450px;
-    height: 300px;
-    bottom: -450px;
+    transform: translate(-50%, 40%);
   }
   .rouletteWrap {
     width: 550px;
@@ -318,10 +310,9 @@ body {
 }
 
 @media all and (max-width: 576px) {
-  .wrap::before {
+  .Rwrap::before {
     width: 400px;
-    height: 300px;
-    bottom: -400px;
+    transform: translate(-50%, 30%);
   }
   .rouletteWrap {
     width: 500px;
@@ -367,9 +358,9 @@ body {
 }
 
 @media all and (max-width: 499px) {
-  .wrap::before {
+  .Rwrap::before {
     width: 350px;
-    bottom: -300px;
+    transform: translate(-50%, 10%);
   }
   .rouletteWrap {
     width: 400px;
@@ -420,9 +411,9 @@ body {
 }
 
 @media all and (max-width: 411px) {
-  .wrap::before {
+  .Rwrap::before {
     width: 280px;
-    bottom: -250px;
+    transform: translate(-50%, 0%);
   }
   .rouletteWrap {
     width: 340px;
