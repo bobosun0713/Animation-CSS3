@@ -1,6 +1,6 @@
 @charset "UTF-8";
 .btn {
-  top: 5%;
+  bottom: 5%;
   left: 50%;
   transform: translate(-50%, 0);
   position: fixed;
