@@ -4,6 +4,31 @@
 //   width: 100%;
 // }
 
+// 按鈕控制
+.btn {
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  position: fixed;
+  z-index: 99;
+  text-align: center;
+  display: flex;
+
+  > a {
+    width: 80px;
+    border-radius: 10px;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+    background-color: rgb(31, 100, 165);
+    color: white;
+    font-weight: 900;
+    font-size: 1.125rem;
+    letter-spacing: 1px;
+    margin: 5px;
+  }
+}
+
 .Rwrap {
   height: 100%;
   width: 100%;
@@ -16,7 +41,7 @@
   background: url(../image/test01.png) no-repeat center center;
   background-size: cover;
 
-  font-family: "微軟正黑體","Microsoft JhengHei";
+  font-family: "微軟正黑體", "Microsoft JhengHei";
 
   //轉盤底座
   &::before {
@@ -83,8 +108,7 @@
       font-weight: bold;
       line-height: 30px;
       color: #fff;
-      text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.8),
-        0 0 20px rgba(246, 229, 141, 1), 0 0 30px rgba(246, 229, 141, 1),
+      text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.8), 0 0 20px rgba(246, 229, 141, 1), 0 0 30px rgba(246, 229, 141, 1),
         0 0 40px rgba(246, 229, 141, 1);
       animation: flashing 1s infinite;
       @keyframes flashing {
@@ -363,6 +387,15 @@
 }
 
 @media all and (max-width: 576px) {
+  .btn {
+    display: flex;
+
+    > a {
+      width: 100%;
+      font-size: 1rem;
+    }
+  }
+
   .Rwrap {
     //轉盤底座
     &::before {

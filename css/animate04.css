@@ -1,4 +1,28 @@
 @charset "UTF-8";
+.btn {
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  position: fixed;
+  z-index: 99;
+  text-align: center;
+  display: flex;
+}
+
+.btn > a {
+  width: 80px;
+  border-radius: 10px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px;
+  background-color: #1f64a5;
+  color: white;
+  font-weight: 900;
+  font-size: 1.125rem;
+  letter-spacing: 1px;
+  margin: 5px;
+}
+
 .Rwrap {
   height: 100%;
   width: 100%;
@@ -10,7 +34,7 @@
   left: 0;
   background: url(../image/test01.png) no-repeat center center;
   background-size: cover;
-  font-family: "微軟正黑體","Microsoft JhengHei";
+  font-family: "微軟正黑體", "Microsoft JhengHei";
 }
 
 .Rwrap::before {
@@ -310,6 +334,13 @@
 }
 
 @media all and (max-width: 576px) {
+  .btn {
+    display: flex;
+  }
+  .btn > a {
+    width: 100%;
+    font-size: 1rem;
+  }
   .Rwrap::before {
     width: 400px;
     transform: translate(-50%, 30%);
